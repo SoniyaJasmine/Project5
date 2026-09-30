@@ -25,6 +25,19 @@ function ProductDetails() {
     blue1
   );
 
+  const handleBuyNow = () => {
+  const product = {
+    id: "KN50054",
+    name: "The Blue Wedding Cards",
+    price: 72.25,
+    image: selectedImage,
+    sku: "KN50054",
+  };
+
+  addToCart(product, quantity);
+  navigate("/checkout");
+};
+
   const images = [
     blue1,
     blue2,
@@ -119,14 +132,14 @@ function ProductDetails() {
 
         {/* RIGHT PRODUCT DETAILS */}
 
-        <div className="product-info">
+        <div className="detail-info">
 
           <div className="sku">
             SKU Code: KN50054
           </div>
 
 
-          <p className="product-price">
+          <p className="detail -price">
             <span>Rs. 72.25</span>{" "}
             per unit inclusive of all taxes
           </p>
@@ -167,11 +180,28 @@ function ProductDetails() {
 
           <div className="product-buttons">
 
-            <button className="buy-button" onClick={() => navigate("/checkout")}>
+            <button
+              className="buy-button"
+              onClick={handleBuyNow}
+            >
               Buy Now
             </button>
 
-            <button className="cart-button" onClick={() => navigate("/cart")}>
+            <button
+              className="cart-button"
+              onClick={() => {
+                const product = {
+                  id: "KN50054",
+                  name: "The Blue Wedding Cards",
+                  price: 72.25,
+                  image: selectedImage,
+                  sku: "KN50054",
+                };
+
+                addToCart(product, quantity);
+                navigate("/cart");
+              }}
+            >
               Add to Cart
             </button>
 

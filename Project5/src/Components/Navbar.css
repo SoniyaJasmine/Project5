@@ -215,7 +215,7 @@
   background: transparent;
   cursor: pointer;
 
-  padding: 0;
+  padding: 5px;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -226,7 +226,7 @@
 .login-link:hover{
   background: #7b1fa2;
   border-radius: 5px;
-  padding: 5px;
+  /* padding: 5px; */
   color: white;
 }
 .nav-icon {
@@ -246,11 +246,26 @@
 .nav-icon:hover{
   background: #7b1fa2;
   border-radius: 5px;
-  padding: 5px;
 }
 .cart-icon {
   position: relative;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  transition:
+    background 0.9s ease,
+    color 0.25s ease;
+  /* padding: 5px; */
+}
+
+.cart-icon:hover{
+  background: #7b1fa2;
+  border-radius: 5px;
+  color: white;
 }
 
 .cart-count {

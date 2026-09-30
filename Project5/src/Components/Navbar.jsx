@@ -96,7 +96,7 @@ function Navbar() {
         </button>
 
         <button
-          className="nav-icon cart-icon"
+          className="cart-icon"
           onClick={() => navigate("/cart")}
           aria-label="Cart"
         >
