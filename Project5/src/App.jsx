@@ -23,7 +23,7 @@ import HinduWeddingCards from "./Pages/HinduWeddingCards";
 import ChristianWeddingCards from "./Pages/ChristianWeddingCards";
 import MuslimWeddingCards from "./Pages/MuslimWeddingCards";
 import AboutUs from "./Pages/About";
-import ContactUs from "./Pages/contactUs";
+import ContactUs from "./Pages/ContactUs";
 import FAQ from "./Pages/FAQ";
 import HowToOrder from "./Pages/HowToOrder";
 
