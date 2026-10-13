@@ -1,0 +1,183 @@
+
+/* -------------------------
+   SOCIAL ICONS
+------------------------- */
+
+.left-social {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+
+    width: 100%;
+    /* height: 32px; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+/* HORIZONTAL LINES */
+
+.social-line {
+    display: block;
+    flex: 1;
+    /* min-width: 15px; */
+    height: 2px;
+    background-color: #c3b5ec;
+
+    transform: scaleX(0);
+    animation: lineReveal 0.8s ease forwards;
+}
+
+.social-line:first-child {
+    transform-origin: right;
+}
+
+.social-line:last-child {
+    transform-origin: left;
+}
+
+/* ICON CONTAINER */
+
+.left-icons {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* ICON LINKS */
+
+.left-icons a {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 21px;
+    text-decoration: none;
+
+    opacity: 0;
+    animation: iconReveal 0.6s ease forwards;
+
+    transition: color 0.3s ease,
+                transform 0.3s ease,
+                filter 0.3s ease;
+}
+
+/* STAGGERED ENTRANCE */
+
+.left-icons a:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.left-icons a:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.left-icons a:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* HOME PAGE COLORS */
+
+.social-light .left-icons a {
+    color: #403852;
+}
+
+.social-light .left-icons a:hover {
+    color: #6C63FF;
+    transform: translateY(-5px) scale(1.15);
+    filter: drop-shadow(0 0 5px rgba(108, 99, 255, 0.5));
+}
+
+/* ABOUT PAGE COLORS */
+
+.social-dark .left-icons a {
+    color: #F5F0E8;
+}
+
+.social-dark .left-icons a:hover {
+    color: #C08A5A;
+    transform: translateY(-5px) scale(1.2);
+    filter: drop-shadow(0 0 5px rgba(192, 138, 90, 0.5));
+}
+
+/* SVG ICONS */
+
+.left-icons a svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+}
+ 
+.left-icons a:hover svg {
+    transform: scale(1.2);
+}
+
+.social-dark .social-line:first-child {
+    /* display: none; */
+    visibility: hidden;
+}
+
+/* ENTRANCE ANIMATIONS */
+
+@keyframes iconReveal {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineReveal {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .left-social {
+        bottom: 15px;
+        padding: 0 12px;
+    }
+
+    .left-icons {
+        gap: 18px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .left-social *,
+    .left-social *::before,
+    .left-social *::after {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1;
+        transform: none;
+    }
+}
+

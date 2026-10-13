@@ -1,0 +1,544 @@
+
+/* ===========================
+   GLOBAL RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
+.about {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 100px 10%;
+    background-color: rgb(49, 49, 48);
+}
+
+
+/* ===========================
+   BACKGROUND WATERMARK
+=========================== */
+
+.about::before {
+    content: "About Me";
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 120px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.04);
+    z-index: 0;
+    white-space: nowrap;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===========================
+   ABOUT HEADING
+=========================== */
+
+.about-heading{
+    position: relative;
+    overflow: hidden;
+    /* margin-bottom: 60px; */
+
+    p{
+        color: #c08a5a;
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        margin-top: 30px;
+        position: relative;
+        z-index: 1;
+        font-family:'Times New Roman', Times, serif
+    }
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.about-container {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+
+.about-image {
+    position: relative;
+    width: 380px;
+    height: 400px;
+    flex-shrink: 0;
+
+    overflow: hidden;
+    border: 2px solid #8B735F;
+    border-radius: 12px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover {
+    border-color: #C08A5A;
+    box-shadow: 0 18px 40px rgba(192, 138, 90, 0.16);
+}
+
+.about-image:hover img {
+    transform: scale(1.06);
+}
+
+/* ===========================
+   ABOUT CONTENT CARD
+=========================== */
+
+.about-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 35px;
+
+    border: 1px solid #8B4513;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.about-content:hover {
+    border-color: #C08A5A;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+}
+
+.about-content h3,
+.about-content h2 {
+    margin-bottom: 25px;
+    color: #F5F0E8;
+
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+
+    color: #BDB9B2;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ===========================
+   EDUCATION & FOCUS DETAILS
+=========================== */
+
+.about-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    margin: 30px 0;
+}
+
+.about-details div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+
+    min-width: 140px;
+    padding: 16px;
+
+    border: 1px solid rgba(192, 138, 90, 0.25);
+    border-radius: 8px;
+    background: rgba(192, 138, 90, 0.05);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.about-details div:hover {
+    transform: translateY(-4px);
+    border-color: #C08A5A;
+    background: rgba(192, 138, 90, 0.1);
+}
+
+.about-details strong {
+    color: #C08A5A;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-details span {
+    color: #D0CCC5;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+}
+
+/* ===========================
+   DOWNLOAD CV BUTTON
+=========================== */
+
+.about-btn {
+    display: inline-block;
+    padding: 12px 25px;
+
+    border: 1px solid #A66A3F;
+    border-radius: 6px;
+
+    background: #A66A3F;
+    color: #FFFFFF;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.about-btn:hover {
+    transform: translateY(-3px);
+    background: transparent;
+    color: #C08A5A;
+    box-shadow: 0 5px 18px rgba(192, 138, 90, 0.15);
+}
+
+/* ===========================
+   TABLET RESPONSIVE
+=========================== */
+
+@media (max-width: 1000px) {
+    .about {
+        padding: 100px 6%;
+    }
+
+    .about-container {
+        gap: 45px;
+    }
+
+    .about-image {
+        width: 320px;
+        height: 370px;
+    }
+
+    .about-content {
+        padding: 28px;
+    }
+}
+
+/* ===========================
+   TABLET & MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+    .about {
+        padding: 80px 30px;
+    }
+
+    .about::before {
+        top: 35px;
+        left: 15px;
+        font-size: 75px;
+    }
+
+    .about-heading {
+        margin-bottom: 45px;
+    }
+
+    .about-heading p {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-image {
+        width: min(320px, 85%);
+        height: 340px;
+    }
+
+    .about-content {
+        max-width: 600px;
+        padding: 30px;
+    }
+
+    .about-content h3,
+    .about-content h2 {
+        font-size: 27px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .about-details {
+        justify-content: center;
+    }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+    .about {
+        padding: 65px 20px 80px;
+    }
+
+    .about::before {
+        top: 25px;
+        left: 8px;
+        font-size: 55px;
+    }
+
+    .about-heading {
+        margin-bottom: 35px;
+    }
+
+    .about-heading p {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .about-image {
+        width: 250px;
+        max-width: 100%;
+        height: 290px;
+    }
+
+    .about-content {
+        padding: 24px 20px;
+    }
+
+    .about-content h3,
+    .about-content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .about-details {
+        gap: 12px;
+        margin: 24px 0;
+    }
+
+    .about-details div {
+        min-width: 0;
+        padding: 12px;
+    }
+
+    .about-details strong {
+        font-size: 12px;
+    }
+
+    .about-details span {
+        font-size: 12px;
+    }
+
+    .about-btn {
+        padding: 11px 20px;
+        font-size: 13px;
+    }
+}
+
+/* ===========================
+   REDUCED MOTION ACCESSIBILITY
+=========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .about::after {
+        animation: none;
+    }
+
+    .about-image,
+    .about-image img,
+    .about-content,
+    .about-details div,
+    .about-btn {
+        transition: none;
+    }
+}
+
+
+/* Ambient background effects */
+
+.about {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #313130;
+}
+
+.about-ambient {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Floating outline orbs */
+
+.ambient-orb {
+    position: absolute;
+    display: block;
+    border: 1px solid rgba(192, 138, 90, 0.22);
+    border-radius: 50%;
+    animation: orbFloat 12s ease-in-out infinite alternate;
+}
+
+.orb-one {
+    width: 260px;
+    height: 260px;
+    top: 8%;
+    left: -100px;
+}
+
+.orb-two {
+    width: 180px;
+    height: 180px;
+    right: 8%;
+    top: 18%;
+    animation-delay: -4s;
+}
+
+.orb-three {
+    width: 320px;
+    height: 320px;
+    right: -130px;
+    bottom: -100px;
+    animation-delay: -7s;
+}
+
+@keyframes orbFloat {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(25px, -20px) rotate(12deg);
+    }
+
+    100% {
+        transform: translate(-15px, 25px) rotate(-8deg);
+    }
+}
+
+/* Floating caramel particles */
+
+.ambient-particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #C08A5A;
+    box-shadow: 0 0 12px rgba(192, 138, 90, 0.4);
+
+    animation: particleDrift 9s ease-in-out infinite;
+}
+
+.particle-one {
+    top: 20%;
+    left: 25%;
+}
+
+.particle-two {
+    top: 70%;
+    left: 12%;
+    animation-delay: -2s;
+}
+
+.particle-three {
+    top: 35%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.particle-four {
+    bottom: 15%;
+    right: 35%;
+    animation-delay: -3s;
+}
+
+.particle-five {
+    top: 55%;
+    left: 55%;
+    animation-delay: -6s;
+}
+
+.particle-six {
+    top: 12%;
+    right: 38%;
+    animation-delay: -4s;
+}
+
+@keyframes particleDrift {
+    0%, 100% {
+        transform: translate(0, 0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translate(18px, -30px);
+        opacity: 0.9;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .ambient-orb,
+    .ambient-particle {
+        animation: none;
+    }
+}
