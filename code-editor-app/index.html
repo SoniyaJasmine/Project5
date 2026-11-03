@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor Web App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Prism.js Theme -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-twilight.min.css">
+</head>
+<body>
+
+    <div id="app-container">
+
+        <!-- Editor Panel -->
+        <div id="editor-panel">
+            <h2>Code Editor</h2>
+
+            <select id="language-selector">
+                <option value="markup">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+            </select>
+
+            <div class="editor-wrapper">
+
+                <pre aria-hidden="true" class="language-markup"><code
+                    id="highlighted-code"
+                    class="language-markup"
+                ></code></pre>
+
+                <textarea
+                    id="code-editor"
+                    placeholder="Write your code here..."
+                    spellcheck="false"
+                ><h1>Hello World!</h1></textarea>
+
+                <!-- Autocomplete suggestions -->
+                <div id="autocompletesuggestions"></div>
+
+            </div>
+
+            <!-- Error message -->
+            <div id="error-message"></div>
+
+            <button id="run-button">Run Code</button>
+            <button id="export-button">Export Code</button>
+        </div>
+
+        <!-- Preview Panel -->
+        <div id="preview-panel">
+            <h2>Live Preview</h2>
+            <div id="preview-content"></div>
+        </div>
+
+    </div>
+
+    <!-- Prism.js Core -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-core.min.js"></script>
+
+    <!-- Language Support -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-javascript.min.js"></script>
+
+    <!-- Application JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

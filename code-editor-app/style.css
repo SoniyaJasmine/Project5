@@ -1,0 +1,171 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#app-container {
+    display: flex;
+    gap: 20px;
+}
+
+#editor-panel,
+#preview-panel {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+}
+
+/* Editor wrapper */
+.editor-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #2d2d2d;
+}
+
+/* Highlighted code */
+.editor-wrapper pre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+    overflow: auto;
+    pointer-events: none;
+    background: transparent !important;
+    z-index: 1;
+}
+
+.editor-wrapper code {
+    display: block;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre;
+}
+
+/* Textarea overlay */
+#code-editor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 15px;
+    border: none;
+    outline: none;
+    resize: none;
+    background: transparent !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    caret-color: white;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    white-space: pre;
+    overflow: auto;
+    tab-size: 4;
+    z-index: 2;
+}
+
+#code-editor::selection {
+    background: rgba(100, 150, 255, 0.4);
+}
+
+/* Autocomplete suggestions */
+#autocompletesuggestions {
+    display: none;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    z-index: 10;
+    min-width: 150px;
+    max-height: 120px;
+    overflow-y: auto;
+    background-color: white;
+    color: #222;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #dceaff;
+}
+
+/* Buttons */
+#run-button,
+#export-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#run-button {
+    background-color: blue;
+    transition: 0.3s;
+}
+
+#run-button:hover {
+    background-color: darkblue;
+}
+
+#export-button {
+    margin-left: 5px;
+    background-color: #198754;
+}
+
+#export-button:hover {
+    background-color: #146c43;
+}
+
+/* Error message */
+#error-message {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#error-message.visible {
+    display: block;
+}
+
+/* Responsive layout */
+@media (max-width: 767px) {
+    #app-container {
+        flex-direction: column;
+    }
+}
+
+#language-selector {
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
